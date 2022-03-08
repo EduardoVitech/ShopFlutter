@@ -8,11 +8,12 @@ class ProductDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Product product;
+    final Product product =
+        ModalRoute.of(context)!.settings.arguments as Product;
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text('Teste'),
+        title: Center(
+          child: Text(product.title),
         ),
       ),
     );
