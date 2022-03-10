@@ -2,14 +2,14 @@ class CartItem {
   String id;
   String productId;
   String productName;
-  int qunatity;
+  int quantity;
   double price;
 
   CartItem({
     required this.id,
     required this.productId,
     required this.productName,
-    required this.qunatity,
+    required this.quantity,
     required this.price,
   });
 }
