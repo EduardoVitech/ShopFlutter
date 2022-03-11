@@ -1,4 +1,4 @@
-import 'package:shop_flutter/models/product.dart';
+import 'package:shop_flutter/models/product_model/product.dart';
 
 final dummyProducts = [
   Product(

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_flutter/components/badge.dart';
-import 'package:shop_flutter/components/product_grid.dart';
-import 'package:shop_flutter/models/cart.dart';
+import 'package:shop_flutter/components/app_drawer/app_drawer.dart';
+import 'package:shop_flutter/components/badge/badge.dart';
+import 'package:shop_flutter/components/product_grid/product_grid.dart';
+import 'package:shop_flutter/models/cart_model/cart.dart';
 import 'package:shop_flutter/utils/app_routes.dart';
 
 enum FilterOptions {
@@ -65,6 +66,7 @@ class _ProductsOverViewPageState extends State<ProductsOverViewPage> {
         ],
       ),
       body: ProductGrid(_showFavoriteOnly),
+      drawer: const AppDrawer(),
     );
   }
 }
