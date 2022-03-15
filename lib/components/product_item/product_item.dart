@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_flutter/models/product_model/product.dart';
+import 'package:shop_flutter/models/product_model/product_list.dart';
+import 'package:shop_flutter/utils/app_routes.dart';
 
 class ProductItem extends StatelessWidget {
   final Product product;
@@ -10,6 +13,11 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final product = Provider.of<Product>(
+      context,
+      listen: true,
+    );
+
     return ListTile(
       leading: CircleAvatar(
         backgroundImage: NetworkImage(product.imageUrl),
@@ -20,12 +28,22 @@ class ProductItem extends StatelessWidget {
         child: Row(
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  AppRoutes.PRODUCTS_FORM,
+                  arguments: product,
+                );
+              },
               icon: const Icon(Icons.edit),
               color: Theme.of(context).primaryColor,
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Provider.of<ProductList>(
+                  context,
+                  listen: false,
+                ).removeProduct(product);
+              },
               icon: const Icon(Icons.delete),
               color: Theme.of(context).errorColor,
             ),
