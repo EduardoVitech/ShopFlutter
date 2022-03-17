@@ -6,8 +6,8 @@ import 'package:shop_flutter/models/product_model/product_list.dart';
 
 class ProductGrid extends StatelessWidget {
   final bool showFavoriteOnly;
-  // ignore: use_key_in_widget_constructors
-  const ProductGrid(this.showFavoriteOnly);
+  // ignore: use_key_in_widget_constructors, prefer_const_constructors_in_immutables
+  ProductGrid(this.showFavoriteOnly);
 
   @override
   Widget build(BuildContext context) {

@@ -4,6 +4,7 @@ import 'package:shop_flutter/components/app_drawer/app_drawer.dart';
 import 'package:shop_flutter/components/badge/badge.dart';
 import 'package:shop_flutter/components/product_grid/product_grid.dart';
 import 'package:shop_flutter/models/cart_model/cart.dart';
+import 'package:shop_flutter/models/product_model/product_list.dart';
 import 'package:shop_flutter/utils/app_routes.dart';
 
 enum FilterOptions {
@@ -20,6 +21,27 @@ class ProductsOverViewPage extends StatefulWidget {
 
 class _ProductsOverViewPageState extends State<ProductsOverViewPage> {
   bool _showFavoriteOnly = false;
+  bool _isLoading = true;
+
+  Future<void> _refreshProducts(BuildContext context) {
+    return Provider.of<ProductList>(
+      context,
+      listen: false,
+    ).loadProducts();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    Provider.of<ProductList>(
+      context,
+      listen: false,
+    ).loadProducts().then((value) {
+      setState(() {
+        _isLoading = false;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +87,12 @@ class _ProductsOverViewPageState extends State<ProductsOverViewPage> {
           ),
         ],
       ),
-      body: ProductGrid(_showFavoriteOnly),
+      body: RefreshIndicator(
+        onRefresh: () => _refreshProducts(context),
+        child: _isLoading
+            ? const Center(child: CircularProgressIndicator())
+            : ProductGrid(_showFavoriteOnly),
+      ),
       drawer: const AppDrawer(),
     );
   }
