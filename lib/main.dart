@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:shop_flutter/models/cart_model/cart.dart';
 import 'package:shop_flutter/models/order_model/order_list.dart';
 import 'package:shop_flutter/models/product_model/product_list.dart';
+import 'package:shop_flutter/pages/auth_page/auth_page.dart';
 import 'package:shop_flutter/pages/cart_page/cart_page.dart';
 import 'package:shop_flutter/pages/orders_page/orders_page.dart';
 import 'package:shop_flutter/pages/product_detail_page/product_detail_page.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         //home: const ProductsOverViewPage(),
         debugShowCheckedModeBanner: false,
         routes: {
+          AppRoutes.AUTH: (ctx) => const AuthPage(),
           AppRoutes.HOME: (ctx) => const ProductsOverViewPage(),
           AppRoutes.PRODUCT_DETAIL: (ctx) => const ProductDetailPage(),
           AppRoutes.CART: (ctx) => const CartPage(),
