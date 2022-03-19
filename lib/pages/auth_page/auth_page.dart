@@ -30,8 +30,9 @@ class AuthPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
+                  margin: const EdgeInsets.only(bottom: 20),
                   padding: const EdgeInsets.symmetric(
-                    vertical: 7,
+                    vertical: 6,
                     horizontal: 50,
                   ),
                   //cascade operator
@@ -47,14 +48,10 @@ class AuthPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: Text(
-                    'ShoPi',
-                    style: TextStyle(
-                      fontSize: 45,
-                      fontFamily: 'Anton',
-                      // ignore: deprecated_member_use
-                      color: Theme.of(context).accentTextTheme.headline6?.color,
-                    ),
+                  child: Image.asset(
+                    'assets/image/logo.png',
+                    scale: 2.4,
+                    alignment: Alignment.center,
                   ),
                 ),
                 const AuthForm(),
