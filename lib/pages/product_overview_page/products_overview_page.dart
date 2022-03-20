@@ -47,7 +47,13 @@ class _ProductsOverViewPageState extends State<ProductsOverViewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('ShoPi')),
+        title: Center(
+          child: Image.asset(
+            'assets/image/logo.png',
+            scale: 3.6,
+            alignment: Alignment.center,
+          ),
+        ),
         actions: [
           PopupMenuButton(
             icon: const Icon(Icons.keyboard_arrow_down),
