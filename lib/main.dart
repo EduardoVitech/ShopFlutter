@@ -11,6 +11,7 @@ import 'package:shop_flutter/pages/product_detail_page/product_detail_page.dart'
 import 'package:shop_flutter/pages/product_form_page/product_form_page.dart';
 import 'package:shop_flutter/pages/products_page/product_page.dart';
 import 'package:shop_flutter/utils/app_routes.dart';
+import 'package:shop_flutter/utils/custom_route/custom_route.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,6 +58,12 @@ class MyApp extends StatelessWidget {
           // ignore: deprecated_member_use
           accentColor: Colors.deepOrange,
           fontFamily: 'Lato',
+          pageTransitionsTheme: PageTransitionsTheme(
+            builders: {
+              TargetPlatform.android: CustomPageTransitionsBuilder(),
+              TargetPlatform.iOS: CustomPageTransitionsBuilder(),
+            },
+          ),
         ),
         //home: const ProductsOverViewPage(),
         debugShowCheckedModeBanner: false,

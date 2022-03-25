@@ -23,10 +23,13 @@ class ProductGridItem extends StatelessWidget {
       borderRadius: BorderRadius.circular(15),
       child: GridTile(
         child: GestureDetector(
-          child: FadeInImage(
-            placeholder: const AssetImage('assets/image/imageTemporaria.png'),
-            image: NetworkImage(product.imageUrl),
-            fit: BoxFit.cover,
+          child: Hero(
+            tag: product.id,
+            child: FadeInImage(
+              placeholder: const AssetImage('assets/image/imageTemporaria.png'),
+              image: NetworkImage(product.imageUrl),
+              fit: BoxFit.cover,
+            ),
           ),
           //child: Image.network(
           //  product.imageUrl,
