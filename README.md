@@ -1,16 +1,40 @@
-# shop_flutter
+# ShoPi
 
-A new Flutter project.
+App de loja desenvolvido em Flutter.
 
-## Getting Started
+- ![Shopi](./assets/image/logo.png)
 
-This project is a starting point for a Flutter application.
+# Telas
 
-A few resources to get you started if this is your first Flutter project:
+- ## Login
+  - ![Login](./assets/LOGIN.png)
+  
+- ## Cadastro
+  - ![Cadastro](./assets/CADASTRO.png)
+  
+- ## Home
+  - ![Home](./assets/HOME.png)
+  
+- ## Favoritos
+  - ![Favoritos](./assets/FAVORITOS.png)  
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- ## Menu Lateral
+  - ![Menu Lateral](./assets/MENU-LATERAL.png)
+  
+- ## Produto
+  - ![Produto](./assets/PRODUTO.png)  
+  
+- ## Carrinho
+  - ![Carrinho](./assets/CARRINHO.png)   
+  
+- ## Meus Pedidos
+  - ![Meus Pedidos](./assets/MEUS-PEDIDOS.png)
+  
+- ## Lista de Produtos
+  - ![Lista de Produtos](./assets/LISTA-PRODUTOS.png)
+  
+- ## Editar Produtos
+  - ![Editar Produtos](./assets/EDITAR-PRODUTO.png)
+  
+- ## Excluir Produtos
+  - ![Excluir Produtos](./assets/EXCLUIR-PRODUTO.png)  
